@@ -1,0 +1,7 @@
+build/
+media/
+migrations/
+
+*.pyc
+
+db.sqlite3
