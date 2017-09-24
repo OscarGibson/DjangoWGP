@@ -6,15 +6,20 @@ from django.db import models
 class Category (models.Model):
 	name = models.CharField(max_length= 128)
 	slug = models.CharField(max_length= 128)
+	def __unicode__(self):
+		return "%s" % self.name
 
 class Tag (models.Model):
 	name = models.CharField(max_length= 128)
 	slug = models.CharField(max_length= 128)
+	def __unicode__(self):
+		return "%s" % self.name
 
 class Post (models.Model):
 	title       = models.CharField(max_length= 128)
 	description = models.CharField(max_length= 128)
 	content     = models.TextField()
+	image       = models.ImageField(upload_to= 'posts')
 	date        = models.DateTimeField(
 		          auto_now_add= True,
 		          auto_now= False
@@ -24,6 +29,10 @@ class Post (models.Model):
 		        related_name= 'post_category'
 		        )
 	tag         = models.ManyToManyField(
-		        Category,
-		        related_name= 'post_tags'
+		        Tag,
+		        related_name= 'post_tags',
+		        null= True,
+		        blank= True
 		        )
+	def __unicode__(self):
+		return "%s" % self.title

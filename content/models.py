@@ -20,12 +20,12 @@ class Heading(models.Model):
 			default= HEADING_CHOICES[0]
 			)
 	def __unicode__(self):
-		return "%s..." % self.content[0:16]
+		return "%s" % self.content
 
 class Text(models.Model):
 	content = models.TextField()
 	def __unicode__(self):
-		return "%s..." % self.content[0:32]
+		return "%s" % self.content
 		
 class Icon(models.Model):
 	name        = models.CharField(max_length= 32)

@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+{% load menu %}
+
+{% block top_menu %}
+ {% top_menu %}
+{% endblock %}
+
+{% block content %}
+<div class="callout large post-header" style="background-image: url({{ post.image.url }});"></div>
+    <div class="row column text-center">
+      <h1>{{ post.title }}</h1>
+      <h2 class="subheader">{{ post.description }}</h2>
+    </div>
+    <hr/>
+    <div class="row medium-8 large-7 columns">
+      <div class="blog-post">
+        <p>{{ post.content }}</p>
+        <hr>
+        <h5 class="blog-post-date"></h5><small class="blog-post-date-small">{{ post.date }}</small>
+      </div>
+    </div>
+{% endblock %}

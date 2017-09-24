@@ -38,3 +38,11 @@ class Page(models.Model):
 
 	def __unicode__(self):
 		return "%s - %s" % (self.title, self.id)
+
+	def create(self, *args, **kwargs):
+		if (self.slug[0] != '/'): self.slug = '/' + self.slug
+		super(Page, self).create(*args, **kwargs)
+
+	def save(self, *args, **kwargs):
+		if (self.slug[0] != '/'): self.slug = '/' + self.slug
+		super(Page, self).save(*args, **kwargs)
