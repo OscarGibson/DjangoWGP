@@ -6,21 +6,18 @@ from content.models import Content
 
 PAGES_TYPES = (
 	('blog', 'Blog'),
-	('simple', 'Simple')
+	('simple', 'Simple'),
+	('simple-invisible', 'Simple invisible')
 	)
 
 class Page(models.Model):
 	
-	title      = models.CharField(
-				 max_length= 32, 
-				 blank= True
-				 )
-	subtitle   = models.CharField(
-				 max_length= 32, 
-				 blank= True
-				 )
+	title      = models.CharField(max_length= 32)
 	slug       = models.CharField(max_length= 32)
-	page_type  = models.CharField(max_length= 32, choices=PAGES_TYPES)
+	page_type  = models.CharField(
+		       max_length= 32, 
+		       choices=PAGES_TYPES
+		       )
 	background = models.ImageField(
 		       upload_to="bg_images",
 		       blank= True,
@@ -40,4 +37,4 @@ class Page(models.Model):
 		       )
 
 	def __unicode__(self):
-		return "%s" % self.title
+		return "%s - %s" % (self.title, self.id)

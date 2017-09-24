@@ -44,11 +44,21 @@ class IconBlock(models.Model):
 class Content(models.Model):
 	heading = models.ForeignKey(
 		    Heading,
-		    related_name= 'heading_content')
+		    related_name= 'heading_content',
+		    blank= True,
+		    null= True
+		    )
 	text    = models.ForeignKey(
 		    Text,
-		    related_name= 'text_content')
-	icon    = models.ForeignKey(IconBlock)
+		    related_name= 'text_content',
+		    blank= True,
+		    null= True
+		    )
+	icon    = models.ForeignKey(
+		    IconBlock,
+		    blank= True,
+		    null= True
+		    )
 	def __unicode__(self):
 		return "Content number -%s" % self.id	
 

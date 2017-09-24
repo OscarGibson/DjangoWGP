@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% load staticfiles menu %}
+
+{% block fixed_background %}
+ <div class="index-body" style="background-image: url({{ page.background.url }});"></div>
+{% endblock %}
+
+{% block top_menu %}
+ {% top_menu %}
+{% endblock %}
+
+{% block content %}
+
+{% if page.header.heading %}
+ <h1 class="main-title">
+ 	{{ page.header.heading.content }}
+ </h1>
+{% endif %}
+
+{% if 1%}
+{% endif %}
+
+{% if page.header.icon %}
+ <div class="callout callout-social large page-header">
+      <div class="row column text-center">
+      {% for icon in page.header.icon.icons.all %}
+      	<div class="social-icon {{icon.name}}">
+          <svg class="icon">
+            <use xlink:href=
+            "{% static 'base/css/svg/icons.svg' %}#svg-icon-fi-social-{{icon.name}}"></use>
+          </svg>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+{% endif %}
+
+{% endblock %}

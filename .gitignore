@@ -2,6 +2,7 @@ build/
 media/
 migrations/
 
-*.pyc
+*/*.pyc
 
 db.sqlite3
+venv27
