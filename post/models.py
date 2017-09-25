@@ -31,7 +31,6 @@ class Post (models.Model):
 	tag         = models.ManyToManyField(
 		        Tag,
 		        related_name= 'post_tags',
-		        null= True,
 		        blank= True
 		        )
 	def __unicode__(self):

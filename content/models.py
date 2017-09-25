@@ -31,6 +31,11 @@ class Icon(models.Model):
 	name        = models.CharField(max_length= 32)
 	color       = models.CharField(max_length= 8)
 	hover_color = models.CharField(max_length= 8)
+	link        = models.URLField(
+		        max_length= 64,
+		        null= True,
+		        blank= True
+				)
 	def __unicode__(self):
 		return "%s" % self.name
 
