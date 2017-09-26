@@ -14,7 +14,7 @@
     <hr/>
     <div class="row medium-8 large-7 columns">
       <div class="blog-post">
-        <p>{{ post.content }}</p>
+        <p>{{ post.content|safe }}</p>
         <hr>
         <h5 class="blog-post-date"></h5><small class="blog-post-date-small">{{ post.date }}</small>
       </div>

@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from ckeditor.fields import RichTextField
 
 class Category (models.Model):
 	name = models.CharField(max_length= 128)
@@ -18,7 +19,7 @@ class Tag (models.Model):
 class Post (models.Model):
 	title       = models.CharField(max_length= 128)
 	description = models.CharField(max_length= 128)
-	content     = models.TextField()
+	content     = RichTextField()
 	image       = models.ImageField(upload_to= 'posts')
 	date        = models.DateTimeField(
 		          auto_now_add= True,

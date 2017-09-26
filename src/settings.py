@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #installed apps
+    'ckeditor',
+    'ckeditor_uploader',
     #custom apps
     'menu',
     'base',
@@ -130,3 +133,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+CKEDITOR_UPLOAD_PATH = 'ckeditor'
