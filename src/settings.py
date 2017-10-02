@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Base first to override admin custom templates
+    'base',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,10 +45,10 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     #custom apps
     'menu',
-    'base',
     'content',
     'page',
     'post',
+    'templateCreator',
 ]
 
 MIDDLEWARE = [

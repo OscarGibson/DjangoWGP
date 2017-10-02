@@ -17,14 +17,11 @@
  </h1>
 {% endif %}
 
-{% if 1%}
-{% endif %}
-
 {% if page.header.icon %}
  <div class="callout callout-social large page-header">
       <div class="row column text-center">
       {% for icon in page.header.icon.icons.all %}
-      <a href="{{ icon.link }}">
+      <a href="{{ icon.link }}" target="_blank">
         <div class="social-icon {{icon.name}}">
           <svg class="icon">
             <use xlink:href=
